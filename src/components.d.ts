@@ -9,7 +9,7 @@ export namespace Components {
     interface SkLoaderImage {
         "animated": boolean;
     }
-    interface SkLoaderParagraph {
+    interface SkLoaderText {
         "align": 'left' | 'center' | 'right';
         "animated": boolean;
         "indent": boolean;
@@ -23,22 +23,22 @@ declare global {
         prototype: HTMLSkLoaderImageElement;
         new (): HTMLSkLoaderImageElement;
     };
-    interface HTMLSkLoaderParagraphElement extends Components.SkLoaderParagraph, HTMLStencilElement {
+    interface HTMLSkLoaderTextElement extends Components.SkLoaderText, HTMLStencilElement {
     }
-    var HTMLSkLoaderParagraphElement: {
-        prototype: HTMLSkLoaderParagraphElement;
-        new (): HTMLSkLoaderParagraphElement;
+    var HTMLSkLoaderTextElement: {
+        prototype: HTMLSkLoaderTextElement;
+        new (): HTMLSkLoaderTextElement;
     };
     interface HTMLElementTagNameMap {
         "sk-loader-image": HTMLSkLoaderImageElement;
-        "sk-loader-paragraph": HTMLSkLoaderParagraphElement;
+        "sk-loader-text": HTMLSkLoaderTextElement;
     }
 }
 declare namespace LocalJSX {
     interface SkLoaderImage {
         "animated"?: boolean;
     }
-    interface SkLoaderParagraph {
+    interface SkLoaderText {
         "align"?: 'left' | 'center' | 'right';
         "animated"?: boolean;
         "indent"?: boolean;
@@ -46,7 +46,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sk-loader-image": SkLoaderImage;
-        "sk-loader-paragraph": SkLoaderParagraph;
+        "sk-loader-text": SkLoaderText;
     }
 }
 export { LocalJSX as JSX };
@@ -54,7 +54,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sk-loader-image": LocalJSX.SkLoaderImage & JSXBase.HTMLAttributes<HTMLSkLoaderImageElement>;
-            "sk-loader-paragraph": LocalJSX.SkLoaderParagraph & JSXBase.HTMLAttributes<HTMLSkLoaderParagraphElement>;
+            "sk-loader-text": LocalJSX.SkLoaderText & JSXBase.HTMLAttributes<HTMLSkLoaderTextElement>;
         }
     }
 }

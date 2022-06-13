@@ -7,11 +7,11 @@ enum AlignmentType {
 }
 
 @Component({
-  tag: 'sk-loader-paragraph',
-  styleUrl: 'sk-loader-paragraph.css',
+  tag: 'sk-loader-text',
+  styleUrl: 'sk-loader-text.css',
   shadow: true,
 })
-export class SkLoaderParagraph {
+export class SkLoaderText {
   @Prop() rows: number = 1;
   @Prop() align: 'left' | 'center' | 'right' = 'left';
   @Prop() indent: boolean = false;
@@ -28,7 +28,7 @@ export class SkLoaderParagraph {
       <Host>
         {this.rowsStyles.map((rowStyle) => 
           <div class='sk-container' style={rowStyle.parent}>
-            <div class={`sk-paragraph-row sk-loader ${this.animated ? 'animated' : ''}`} style={rowStyle.child}></div>
+            <div class={`sk-text-row sk-loader ${this.animated ? 'animated' : ''}`} style={rowStyle.child}></div>
           </div>
         )}
       </Host>
@@ -62,9 +62,18 @@ export class SkLoaderParagraph {
     }
   }
 
+  private addIndentation(style: any): void {
+    if (this.align === 'left') {      
+      style.parent['margin-left'] = '10%';
+    }
+    else if (this.align === 'right') {      
+      style.parent['margin-right'] = '10%';
+    }
+  }
+
   private generateRows(rowsNumber: number): any[] {
     return [...Array(rowsNumber)].map((_, index) => {
-      const style: any = {
+      let style: any = {
         child: {
           width: `${this.getWidth(index)}%`,
         },
@@ -74,7 +83,7 @@ export class SkLoaderParagraph {
       };
 
       if (this.indent && index === 0) {
-        style.parent['margin-left'] = '10%';
+        this.addIndentation(style);
       }
 
       return style;

@@ -1,7 +1,12 @@
 {
   "name": "sk-loader",
-  "version": "2.0.1",
-  "description": "Skeleton loader components library",
+  "version": "2.1.1",
+  "title": "sk-loader",
+  "description": "Highly customizable skeleton loader component for Angular applications.",
+  "author": {
+    "name": "Vlad Pascu",
+    "url": "https://github.com/PascuVlad25"
+  },
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -12,8 +17,28 @@
   "unpkg": "dist/sk-loader-web-components/sk-loader-web-components.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
-  },
+    "url": "https://github.com/PascuVlad25/sk-loader-web-components.git"
+  },  
+  "keywords": [
+    "skeleton",
+    "loader",
+    "sk-loader",
+    "custom-loader",
+    "loading",
+    "web-components",
+    "javascript",
+    "angular",
+    "react",
+    "placeholder",
+    "static",
+    "wave",
+    "skeleton-animation",
+    "youtube-loading",
+    "facebook-loading",
+    "skeleton-text",
+    "skeleton-image"
+  ],
+  "homepage": "https://vladpascu.com/sk-loader/",
   "files": [
     "dist/",
     "loader/"
